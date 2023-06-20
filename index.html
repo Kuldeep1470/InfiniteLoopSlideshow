@@ -105,8 +105,6 @@
     <script>
         let image_box = document.querySelectorAll('.image-box');
         let slide = document.querySelector('.slide');
-        let slideWidth = slide.clientWidth;
-        let imageWidth = image_box[0].clientWidth;
         let imageSlideValue = image_box.length*100;
         let slideSlideValue = 100/image_box.length;
         let index = 0;
@@ -115,8 +113,6 @@
         let transformed = 0;
 
         function right(){
-            console.log('slideWidthPercent',imageSlideValue);
-            console.log('imageWidthPercent',slideSlideValue);
             transformed -= slideSlideValue;
             slide.style.transform = `translateX(${transformed}%)`;
             image_box[index].style.transform = `translateX(${imageSlideValue + imageSlideValue*count}%)`;
@@ -129,8 +125,6 @@
         }
         
         function left(){
-            console.log('slideWidthPercent',imageSlideValue);
-            console.log('imageWidthPercent',slideSlideValue);
             if (index == 0 ) {
                 reverseIndex = image_box.length-1;
                 count--;
